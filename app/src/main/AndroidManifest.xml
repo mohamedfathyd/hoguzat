@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.khalej.hoguzat"
+    android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".application"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCaJmmBcJN2UZHfRQPTNObCe7_j3Vdy7_k" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges= "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity android:name="com.facebook.CustomTabActivity"
+            android:exported="true"> <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="@string/fb_login_protocol_scheme"
+                tools:ignore="ManifestResource" /> </intent-filter> </activity>
+
+        <activity android:name=".Activity.MapsActivity"></activity>
+        <activity android:name=".Activity.Fatoura"></activity>
+        <activity android:name=".Activity.Profile" />
+        <activity android:name=".Activity.WhoUs" />
+        <activity android:name=".Activity.AboutUs" />
+        <activity android:name=".Activity.Salon" />
+        <activity android:name=".Activity.SelectDate" />
+        <activity android:name=".Activity.staff" />
+        <activity android:name=".Activity.Offers" />
+        <activity android:name=".Activity.services" />
+        <activity android:name=".Activity.info" />
+        <activity android:name=".Activity.Show" />
+        <activity android:name=".Activity.CardView" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.Login" />
+        <activity android:name=".Activity.Registration" />
+    </application>
+
+</manifest>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/main"
+            android:icon="@drawable/mainn"
+            android:title="@string/main" />
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/profilee"
+            android:title="@string/profile" />
+        <item
+            android:id="@+id/aboutus"
+            android:icon="@drawable/whous"
+            android:title="@string/whous" />
+        <item
+            android:id="@+id/callus"
+            android:icon="@drawable/callus"
+            android:title="@string/callus" />
+    </group>
+
+    <item android:title="@string/app_name">
+        <menu>
+            <item
+                android:id="@+id/nav_item1"
+                android:title="@string/lang"
+
+                />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/logout"
+                android:title="@string/Logout" />
+        </menu>
+    </item>
+
+</menu>
