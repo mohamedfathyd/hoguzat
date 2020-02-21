@@ -7,7 +7,9 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.khalej.hoguzat.R;
@@ -20,8 +22,10 @@ import me.anwarshahriar.calligrapher.Calligrapher;
 public class Profile extends AppCompatActivity {
     TextView name,address,phone,id;
     private SharedPreferences sharedpref;
+    private SharedPreferences.Editor edt;
     Typeface myTypeface;
     CircleImageView image;
+    Button save;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,7 @@ public class Profile extends AppCompatActivity {
         initializer();
         myTypeface = Typeface.createFromAsset(getAssets(), "Droid.ttf");
         sharedpref= getSharedPreferences("Education", Context.MODE_PRIVATE);
+        edt = sharedpref.edit();
         image=findViewById(R.id.image);
         Glide.with(this).load(sharedpref.getString("image","").trim()).error(R.drawable.profile).into(image);
 
@@ -53,11 +58,20 @@ public class Profile extends AppCompatActivity {
         name.setText(sharedpref.getString("name","").trim());
         address.setText(sharedpref.getString("address","").trim());
         phone.setText(sharedpref.getString("phone","").trim());
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edt.putString("phone",phone.getText().toString());
+                edt.apply();
+                Toast.makeText(Profile.this,"تم تغيير رقم الهاتف بنجاح"  , Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
     private void initializer(){
         name=(TextView)findViewById(R.id.username);
         address=(TextView)findViewById(R.id.address);
-        phone=(TextView)findViewById(R.id.phone);
+        phone=findViewById(R.id.phone);
+        save=findViewById(R.id.save);
         }
 }
